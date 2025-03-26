@@ -1,29 +1,297 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Gonçalves | Links</title>
+    <title>Portfólio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <img src="images/foto-perfil.png" alt="Foto de Gabriel Gonçalves" class="profile-pic">
-        <h1>Gabriel Gonçalves</h1>
-        <p class="bio">Desenvolvedor Web | Criando experiências digitais únicas</p>
-        
-        <div class="links-container">
-            <a href="../portfolio/index.html" class="link-btn"><i class="fas fa-code"></i> Meu Portfólio</a>
-            <a href="../portfolio/index.html#projects" class="link-btn"><i class="fas fa-laptop-code"></i> Projetos</a>
-            <a href="../portfolio/CV.pdf" class="link-btn" download><i class="fas fa-file-alt"></i> Download CV</a>
-            <a href="https://wa.me/5531985538709" class="link-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            <a href="https://www.instagram.com/gapy.ntj?igsh=eWJzaDZodXJ3MDcw" class="link-btn"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="https://www.linkedin.com/in/kyoro-lsd-829214297/" class="link-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        </div>
-    </div>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <header>
+        <div class="logo">Portfólio</div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="nav-link">Início</a></li>
+                <li><a href="#about" class="nav-link">Sobre</a></li>
+                <li><a href="#projects" class="nav-link">Projetos</a></li>
+                <li><a href="#skills" class="nav-link">Habilidades</a></li>
+                <li><a href="#contact" class="nav-link">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="section">
+            <div class="container">
+                <div class="content">
+                    <h1 class="glitch" data-text="Olá, eu sou">Olá, eu sou</h1>
+                    <h2 class="name">Gabriel Pereira</h2>
+                    <h3 class="title">Desenvolvedor Web</h3>
+                    <p class="description">Criando experiências digitais únicas e memoráveis</p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn primary">Ver Projetos</a>
+                        <a href="#contact" class="btn secondary">Contato</a>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <div class="arrow">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">Sobre Mim</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <div class="image-container">
+                            <img src="./foto-perfil.jpg" alt="Foto de Gabriel Pereira">
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <p>Olá! Sou um desenvolvedor web apaixonado por criar experiências digitais elegantes e funcionais. Com foco em design minimalista e interfaces intuitivas, busco sempre a melhor solução para cada projeto.</p>
+                        <p>Minha jornada na programação começou há X anos, e desde então venho aprimorando minhas habilidades em diversas tecnologias e metodologias de desenvolvimento.</p>
+                        <p>Quando não estou codificando, gosto de [seus hobbies e interesses]. Acredito que essas atividades me ajudam a manter a criatividade e trazer novas perspectivas para meu trabalho.</p>
+                        <div class="personal-info">
+                            <div class="info-item">
+                                <span class="info-title">Nome:</span>
+                                <span class="info-value">Seu Nome Completo</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-title">Email:</span>
+                                <span class="info-value">gabriel.pereira@example.com</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-title">Localização:</span>
+                                <span class="info-value">Rio de Janeiro, Brasil</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-title">Disponível para:</span>
+                                <span class="info-value">Projetos Freelance e Oportunidades Remotas</span>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://github.com/Gapy" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://linkedin.com/in/gabriel-pereira" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        </div>
+                        <a href="CV.pdf" class="btn primary" download>Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Meus Projetos</h2>
+                <div class="projects-filter">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="app">App</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card" data-category="web">
+                        <div class="project-img">
+                            <img src="https://via.placeholder.com/600x400" alt="Projeto 1">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Sistema de Gestão Escolar</h3>
+                            <p class="project-description">Plataforma full-stack desenvolvida com React, Node.js e MongoDB para automação de processos educacionais.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card" data-category="app">
+                        <div class="project-img">
+                            <img src="https://via.placeholder.com/600x400" alt="Projeto 2">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">E-commerce Responsivo</h3>
+                            <p class="project-description">Loja virtual com carrinho de compras integrado, desenvolvida com Vue.js e integração com API de pagamentos.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">Stripe API</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card" data-category="design">
+                        <div class="project-img">
+                            <img src="https://via.placeholder.com/600x400" alt="Projeto 3">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Projeto 3</h3>
+                            <p class="project-description">Portfólio interativo desenvolvido com HTML5, CSS3 e JavaScript moderno.</p>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card" data-category="web">
+                        <div class="project-img">
+                            <img src="https://via.placeholder.com/600x400" alt="Projeto 4">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Projeto 4</h3>
+                            <p class="project-description">Portfólio interativo desenvolvido com HTML5, CSS3 e JavaScript moderno.</p>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Minhas Habilidades</h2>
+                <div class="skills-content">
+                    <div class="skills-category">
+                        <h3 class="category-title">Desenvolvimento Frontend</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <h4 class="skill-name">HTML</h4>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <h4 class="skill-name">CSS</h4>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <h4 class="skill-name">JavaScript</h4>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <h4 class="skill-name">React</h4>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h3 class="category-title">Desenvolvimento Backend</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <h4 class="skill-name">Node.js</h4>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <h4 class="skill-name">Python</h4>
+                                    <span class="skill-percentage">65%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <h4 class="skill-name">MongoDB</h4>
+                                    <span class="skill-percentage">60%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <h4 class="skill-name">SQL</h4>
+                                    <span class="skill-percentage">55%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 55%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h3 class="category-title">Ferramentas & Outros</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <h4 class="skill-name">Git</h4>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <h4 class="skill-name">Figma</h4>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <h4 class="skill-name">Responsive Design</h4>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar

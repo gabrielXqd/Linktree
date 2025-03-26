@@ -1,56 +1,79 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Animação de entrada para os elementos
-    const container = document.querySelector('.container');
-    const profilePic = document.querySelector('.profile-pic');
-    const heading = document.querySelector('h1');
-    const bio = document.querySelector('.bio');
-    const links = document.querySelectorAll('.link-btn');
+document.addEventListener('DOMContentLoaded', function() {
+    const cursor = document.querySelector('.cursor');
+    const cursorFollower = document.querySelector('.cursor-follower');
     
-    // Função para animar entrada dos elementos
-    function animateElements() {
-        setTimeout(() => profilePic.style.opacity = '1', 300);
-        setTimeout(() => heading.style.opacity = '1', 600);
-        setTimeout(() => bio.style.opacity = '1', 900);
+    // Verifica se os elementos do cursor existem
+    if (!cursor || !cursorFollower) return;
+    
+    // Esconde o cursor padrão
+    document.body.style.cursor = 'none';
+    
+    // Variáveis para suavizar o movimento do cursor
+    let mouseX = 0;
+    let mouseY = 0;
+    let followerX = 0;
+    let followerY = 0;
+    
+    // Atualiza a posição do cursor quando o mouse se move
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
         
-        links.forEach((link, index) => {
-            setTimeout(() => {
-                link.style.opacity = '1';
-                link.style.transform = 'translateY(0)';
-            }, 1200 + (index * 100));
+        // Atualiza a posição do cursor principal imediatamente
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
+    });
+    
+    // Efeito de hover em links e botões
+    const links = document.querySelectorAll('a, button, .btn, .project-card, .social-link');
+    
+    links.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            cursor.style.width = '0px';
+            cursor.style.height = '0px';
+            cursorFollower.style.width = '50px';
+            cursorFollower.style.height = '50px';
+            cursorFollower.style.borderWidth = '2px';
+            cursorFollower.style.opacity = '0.8';
         });
+        
+        link.addEventListener('mouseleave', function() {
+            cursor.style.width = '10px';
+            cursor.style.height = '10px';
+            cursorFollower.style.width = '30px';
+            cursorFollower.style.height = '30px';
+            cursorFollower.style.borderWidth = '1px';
+            cursorFollower.style.opacity = '0.5';
+        });
+    });
+    
+    // Função de animação para o cursor follower (efeito de atraso)
+    function animate() {
+        // Calcula a posição do cursor follower com efeito de suavização
+        followerX += (mouseX - followerX) * 0.1;
+        followerY += (mouseY - followerY) * 0.1;
+        
+        // Atualiza a posição do cursor follower
+        cursorFollower.style.left = followerX + 'px';
+        cursorFollower.style.top = followerY + 'px';
+        
+        requestAnimationFrame(animate);
     }
     
-    // Inicializar estilos para animação
-    profilePic.style.opacity = '0';
-    heading.style.opacity = '0';
-    bio.style.opacity = '0';
+    // Inicia a animação
+    animate();
     
-    links.forEach(link => {
-        link.style.opacity = '0';
-        link.style.transform = 'translateY(20px)';
+    // Esconde os cursores quando o mouse sai da janela
+    document.addEventListener('mouseout', function(e) {
+        if (e.relatedTarget === null) {
+            cursor.style.opacity = '0';
+            cursorFollower.style.opacity = '0';
+        }
     });
     
-    // Iniciar animação
-    animateElements();
-    
-    // Adicionar efeito de clique nos botões
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Não prevenir navegação para links externos
-            if (this.getAttribute('href').startsWith('#')) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-            
-            // Efeito visual de clique
-            this.classList.add('clicked');
-            setTimeout(() => {
-                this.classList.remove('clicked');
-            }, 300);
-        });
+    // Mostra os cursores quando o mouse entra na janela
+    document.addEventListener('mouseover', function() {
+        cursor.style.opacity = '1';
+        cursorFollower.style.opacity = '0.5';
     });
-    
-    console.log('Linktree carregado com sucesso!');
 });
